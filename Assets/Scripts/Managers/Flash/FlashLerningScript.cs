@@ -13,16 +13,13 @@ public class FlashLernignScript : MonoBehaviour
 
     private void Start()
     {
-        // Load flashcards from a text file at the start of the game.
         LoadFlashcardsFromFile("path/to/your/file.txt");
 
-        // Start the game with a random flashcard.
         ChooseRandomFlashcard();
     }
 
     private void Update()
     {
-        // Accept user input when the Enter key is pressed.
         if (Input.GetKeyDown(KeyCode.Return))
         {
             CheckAnswer(answerField.text);
@@ -60,9 +57,7 @@ public class FlashLernignScript : MonoBehaviour
 
     private void DisplayFlashcard(string english)
     {
-        // Display the English word in the user interface.
         englishText.text = english;
-        // Clear the answer field.
         answerField.text = "";
     }
 
@@ -73,7 +68,7 @@ public class FlashLernignScript : MonoBehaviour
         if (userAnswer.Trim().ToLower() == correctAnswer.Trim().ToLower())
         {
             Debug.Log("Correct answer!");
-            ChooseRandomFlashcard(); // Move to the next flashcard.
+            ChooseRandomFlashcard(); 
         }
         else
         {

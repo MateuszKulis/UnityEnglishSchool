@@ -13,8 +13,7 @@ public class FlashLernignScript : MonoBehaviour
 
     private void Start()
     {
-        LoadFlashcardsFromFile("path/to/your/file.txt");
-
+        LoadFlashcardsFromFile("Assets/words.txt");
         ChooseRandomFlashcard();
     }
 
@@ -28,7 +27,14 @@ public class FlashLernignScript : MonoBehaviour
 
     private void LoadFlashcardsFromFile(string path)
     {
-        flashcards = new Dictionary<string, string>();
+        if (flashcards == null)
+        {
+            flashcards = new Dictionary<string, string>();
+        }
+        else
+        {
+            flashcards.Clear();
+        }
 
         string[] lines = System.IO.File.ReadAllLines(path);
 
@@ -37,7 +43,17 @@ public class FlashLernignScript : MonoBehaviour
             string[] parts = line.Split('-');
             if (parts.Length == 2)
             {
-                flashcards.Add(parts[0].Trim(), parts[1].Trim());
+                string englishWord = parts[0].Trim();
+                string polishTranslation = parts[1].Trim();
+
+                if (!flashcards.ContainsKey(englishWord))
+                {
+                    flashcards.Add(englishWord, polishTranslation);
+                }
+                else
+                {
+                    Debug.LogWarning("Duplicate key found: " + englishWord);
+                }
             }
         }
     }
@@ -76,3 +92,4 @@ public class FlashLernignScript : MonoBehaviour
         }
     }
 }
+

@@ -3,10 +3,10 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
-public class FlashLernignScript : MonoBehaviour
+public class FlashCardManager : MonoBehaviour
 {
     [SerializeField] private Text englishText;
-    [SerializeField] private Text pointsText;
+    [SerializeField] private TextMeshProUGUI pointsText;
     [SerializeField] private InputField answerField;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Sprite correctBackground;
@@ -26,7 +26,7 @@ public class FlashLernignScript : MonoBehaviour
 
     private void UpdatePointsText()
     {
-        pointsText.text = "Points: " + points.ToString();
+        pointsText.text = points.ToString();
     }
 
     private void Update()

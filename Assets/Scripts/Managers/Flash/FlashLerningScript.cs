@@ -1,20 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System.Collections.Generic;
+using TMPro;
 
 public class FlashLernignScript : MonoBehaviour
 {
-    public TextMeshProUGUI englishText;
-    public InputField answerField;
+    [SerializeField] private Text englishText;
+    [SerializeField] private Text pointsText;
+    [SerializeField] private InputField answerField;
+    [SerializeField] private Image backgroundImage;
+    [SerializeField] private Sprite correctBackground;
+    [SerializeField] private Sprite incorrectBackground;
 
     private Dictionary<string, string> flashcards;
     private string currentFlashcardEnglish;
+    private int points = 5;
 
     private void Start()
     {
         LoadFlashcardsFromFile("Assets/words.txt");
         ChooseRandomFlashcard();
+
+        UpdatePointsText(); 
+    }
+
+    private void UpdatePointsText()
+    {
+        pointsText.text = "Points: " + points.ToString();
     }
 
     private void Update()
@@ -33,7 +45,7 @@ public class FlashLernignScript : MonoBehaviour
         }
         else
         {
-            flashcards.Clear();
+            flashcards.Clear(); 
         }
 
         string[] lines = System.IO.File.ReadAllLines(path);
@@ -83,13 +95,24 @@ public class FlashLernignScript : MonoBehaviour
 
         if (userAnswer.Trim().ToLower() == correctAnswer.Trim().ToLower())
         {
-            Debug.Log("Correct answer!");
-            ChooseRandomFlashcard(); 
+            backgroundImage.sprite = correctBackground;
+            points += 1;
         }
         else
         {
-            Debug.Log("Incorrect answer. Try again.");
+            backgroundImage.sprite = incorrectBackground;
+            points -= 1;
+        }
+
+        UpdatePointsText(); 
+
+        if (points <= 0)
+        {
+            Debug.Log("Game Over!");
+        }
+        else
+        {
+            ChooseRandomFlashcard();
         }
     }
 }
-

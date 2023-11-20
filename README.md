@@ -1,6 +1,6 @@
-![p1]((https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile1.png))
-![p2]((https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile2.png))
-![p3]((https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile3.png))
+![p1](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile1.png)
+![p2](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile2.png)
+![p3](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile3.png)
 # Word Games Project Documentation
 
 ## Project Overview

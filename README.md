@@ -1,6 +1,3 @@
-![p1](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile1.png)
-![p2](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile2.png)
-![p3](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile3.png)
 # Word Games Project Documentation
 
 ## Project Overview
@@ -11,7 +8,11 @@ The Word Games project encompasses a set of Unity scripts that handle various wo
 
 ### Description
 
+![p1](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile1.png)
+
+
 The `FlashCardManager` script handles a flashcard-style game for learning vocabulary. Players are presented with a random English word and must input its Polish translation. Correct answers earn points, while incorrect answers result in point deductions. The game concludes when the player reaches zero points.
+
 
 ### Components
 
@@ -35,6 +36,9 @@ The `FlashCardManager` script handles a flashcard-style game for learning vocabu
 ## QuizManager
 
 ### Description
+
+![p2](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile2.png)
+
 
 The `QuizManager` script manages a quiz with questions and multiple-choice answers. Players must select the correct answer to proceed to the next question. After completing the quiz, a message indicates the end of the quiz.
 
@@ -61,6 +65,9 @@ The `QuizManager` script manages a quiz with questions and multiple-choice answe
 ## WordGameManager
 
 ### Description
+
+![p3](https://github.com/MateuszKulis/UnityEnglishSchool/blob/main/mobile3.png)
+
 
 The `WordGameManager` script manages a word game where players must guess hidden letters in a word.
 
